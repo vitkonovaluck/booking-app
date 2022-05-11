@@ -1,7 +1,11 @@
 <?php
+namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 
 class EventsTableSeeder extends Seeder
 {

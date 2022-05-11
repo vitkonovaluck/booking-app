@@ -1,5 +1,11 @@
 <?php
 
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class RoomsTableSeeder extends Seeder
@@ -11,6 +17,6 @@ class RoomsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Model\Room::class, 30)->create();
+        \App\Models\Room::factory()->count(30)->create();
     }
 }

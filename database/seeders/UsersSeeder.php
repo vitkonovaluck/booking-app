@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class UsersSeeder extends Seeder
@@ -15,20 +18,20 @@ class UsersSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'first_name' => "Geeta",
-            'last_name' => "sharma",
-            'gender' => "female",
-            'phone' => "9866893439",
-            'address' => "Kathmandu",
-            'email' => "vkonovaluck@gmail.com",
+            'first_name' => "Vit",
+            'last_name' => "Kon",
+            'gender' => "male",
+            'phone' => "380180123456",
+            'address' => "Vinnitsa",
+            'email' => "ekonovaluck@gmail.com",
             'password' => bcrypt('password'),
-            'avatar' => 'girl-1.png',
+            'avatar' => 'boy-1.png',
             'about' => "hello from the other world",
             'role' => 'admin',
             'status' => TRUE,
-            'remember_token' => str_random(10),
+            'remember_token' => Str::random(10),
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
-        factory(App\Model\User::class, 10)->create();
+        \App\Models\User::factory()->count(10)->create();
     }
 }
